@@ -2,10 +2,10 @@
 export default defineNuxtConfig({
     app: {
         head: {
-            title: 'Plurk – Tailwind CSS Multipurpose Landing Templates',
-            titleTemplate: '%s | Plurk – Tailwind CSS Multipurpose Landing Templates',
+            title: 'Botcom – Agenzia di comunicazione digitale e sviluppo software a Milano',
+            titleTemplate: '%s | Botcom Agenzia di comunicazione digitale e sviluppo software a Milano',
             htmlAttrs: {
-                lang: 'en',
+                lang: 'it',
             },
             meta: [
                 { charset: 'utf-8' },
