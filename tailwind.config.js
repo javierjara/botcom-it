@@ -32,13 +32,14 @@ module.exports = {
         fontFamily: {
             mulish: ['Mulish', 'sans-serif'],
             reey: ['reey', 'sans-serif'],
+            barlow: ['Barlow', 'sans-serif'],
         },
         colors: {
             transparent: 'transparent',
             current: 'currentColor',
             white: '#ffffff',
-            black: '#08111F',
-            primary: '#47BDFF',
+            black: '#000000',
+            primary: '#FFDE59',
             secondary: '#B476E5',
             gray: {
                 DEFAULT: '#7780A1',

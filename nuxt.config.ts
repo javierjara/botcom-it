@@ -20,7 +20,7 @@ export default defineNuxtConfig({
                 { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
                 {
                     rel: 'stylesheet',
-                    href: 'https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800&display=swap',
+                    href: 'https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;800&display=swap',
                 },
             ],
         },

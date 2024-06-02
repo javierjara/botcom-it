@@ -32,9 +32,6 @@
             </div>
         </section>
 
-        <section class="border-b border-gray/30 py-[50px] dark:bg-black">
-            <LogoSlider></LogoSlider>
-        </section>
 
         <section class="py-12 dark:bg-black lg:py-24">
             <div class="container">
@@ -351,123 +348,6 @@
             </div>
         </section>
 
-        <section class="py-12 lg:py-24">
-            <div class="container">
-                <div class="heading text-center">
-                    <h4 class="!font-black uppercase">Most Asked <span class="text-secondary">Questions</span></h4>
-                    <h6 class="mx-auto mt-2 max-w-[520px] !font-medium !text-gray">
-                        Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Sunt, Architecto Cupiditate Odio Rerum Est
-                    </h6>
-                </div>
-                <div class="flex flex-col items-center gap-5 sm:gap-10 lg:flex-row">
-                    <div class="w-full max-w-[552px] flex-none">
-                        <img src="/assets/images/consulting/question-img.png" class="rtl:rotate-y-180" alt="" />
-                    </div>
-                    <div class="accordion-container flex-1">
-                        <div v-for="(faq, i) in queries" :key="faq.id" class="mt-5">
-                            <h2 class="" @click="accordians === i ? (accordians = null) : (accordians = i)">
-                                <button
-                                    type="button"
-                                    class="relative flex w-full items-center justify-between gap-2 !bg-gray/30 px-5 py-2.5 !font-mulish text-lg font-bold text-black ltr:text-left rtl:text-right dark:!text-white sm:text-xl"
-                                >
-                                    <div>{{ faq.question }}</div>
-                                    <div
-                                        class="trigger-icon grid h-6 w-6 place-content-center rounded-full border-2 border-gray text-black transition dark:text-white"
-                                    >
-                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M6.09961 0.500977C6.65189 0.500977 7.09961 0.948692 7.09961 1.50098L7.09961 10.501C7.09961 11.0533 6.65189 11.501 6.09961 11.501H5.89961C5.34732 11.501 4.89961 11.0533 4.89961 10.501L4.89961 1.50098C4.89961 0.948692 5.34732 0.500977 5.89961 0.500977H6.09961Z"
-                                                fill="currentColor"
-                                            />
-                                            <path
-                                                d="M0.5 5.90039C0.5 5.34811 0.947715 4.90039 1.5 4.90039H10.5C11.0523 4.90039 11.5 5.34811 11.5 5.90039V6.10039C11.5 6.65268 11.0523 7.10039 10.5 7.10039H1.5C0.947715 7.10039 0.5 6.65268 0.5 6.10039V5.90039Z"
-                                                fill="currentColor"
-                                            />
-                                        </svg>
-                                    </div>
-                                </button>
-                            </h2>
-                            <vue-collapsible :isOpen="accordians === i">
-                                <div class="bg-white p-5 font-mulish text-base font-medium text-gray dark:bg-white/5">
-                                    <p>{{ faq.answer }}</p>
-                                </div>
-                            </vue-collapsible>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="bg-black bg-[url(/assets/images/consulting/business-img.png)] bg-cover bg-center bg-no-repeat py-12 lg:py-24">
-            <div class="container">
-                <div class="grid grid-cols-1 gap-12 text-center lg:grid-cols-2 lg:gap-20 ltr:lg:text-left rtl:lg:text-right">
-                    <div>
-                        <h3 class="text-3xl font-black uppercase text-white sm:text-[40px] sm:leading-[50px]">
-                            We Help <span class="text-primary">Growing Business</span>
-                        </h3>
-                        <p class="mt-[18px] text-lg">
-                            We help managing asset, provide financial advise. leave money issue with us and focus on your core business.
-                        </p>
-                        <div class="mt-[18px] flex justify-center gap-6 lg:justify-start">
-                            <div>
-                                <NuxtLink
-                                    to="contact-us"
-                                    class="btn rounded-md bg-secondary text-white shadow-[10px_15px_30px_rgba(199,128,161,0.2)] hover:bg-primary"
-                                    >Contact us</NuxtLink
-                                >
-                            </div>
-                            <button type="button" class="group flex items-center gap-2.5" @click="dialog.open()">
-                                <span>
-                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M15 27.5C21.9036 27.5 27.5 21.9036 27.5 15C27.5 8.09644 21.9036 2.5 15 2.5"
-                                            stroke="#47BDFF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                        />
-                                        <path
-                                            d="M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5"
-                                            stroke="#47BDFF"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-dasharray="4 3"
-                                        />
-                                        <path
-                                            d="M17.3595 12.4185C18.7032 13.5146 19.375 14.0626 19.375 15C19.375 15.9374 18.7032 16.4854 17.3595 17.5815C16.9886 17.8841 16.6207 18.169 16.2826 18.4064C15.9861 18.6146 15.6502 18.83 15.3024 19.0415C13.9619 19.8567 13.2917 20.2643 12.6905 19.813C12.0894 19.3617 12.0347 18.4171 11.9255 16.5277C11.8946 15.9934 11.875 15.4696 11.875 15C11.875 14.5304 11.8946 14.0066 11.9255 13.4723C12.0347 11.5829 12.0894 10.6383 12.6905 10.187C13.2917 9.73574 13.9619 10.1433 15.3024 10.9585C15.6502 11.17 15.9861 11.3854 16.2826 11.5936C16.6207 11.831 16.9886 12.1159 17.3595 12.4185Z"
-                                            stroke="#47BDFF"
-                                            stroke-width="2"
-                                        />
-                                    </svg>
-                                </span>
-                                <span class="uppercase text-white duration-200 group-hover:text-primary">Watch Videos</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 items-center gap-3 sm:gap-7" data-aos="flip-left" data-aos-duration="1000">
-                        <div class="border border-transparent bg-gray/20 py-10 px-5 text-center duration-200 hover:border-secondary sm:py-[52px]">
-                            <count-up
-                                class="text-[34px] font-black text-white"
-                                :startVal="0"
-                                :end-val="100"
-                                :duration="10"
-                                :options="{ suffix: '+' }"
-                            ></count-up>
-                            <p class="mt-2.5 font-bold">Satisfied customers</p>
-                        </div>
-                        <div class="border border-transparent bg-gray/20 py-10 px-5 text-center duration-200 hover:border-secondary sm:py-[52px]">
-                            <count-up
-                                class="text-[34px] font-black text-white"
-                                :startVal="0"
-                                :end-val="12"
-                                :duration="10"
-                                :options="{ suffix: '+' }"
-                            ></count-up>
-                            <p class="mt-2.5 font-bold">Years project experince</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <modal
             ref="dialog"

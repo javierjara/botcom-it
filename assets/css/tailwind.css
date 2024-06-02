@@ -100,19 +100,95 @@
         @apply hidden;
     }
 
+    html {
+        text-underline-offset: 5px;
+    }
+
+    .fade-in-text {
+        display: inline-block;
+        color: black;
+        padding: 10px;
+        animation: fadeIn 3s forwards;
+      }
+  
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-50%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in-triangle {
+        display: inline-block;
+        color: black;
+        padding: 10px;
+        animation: fadeInTriangle 3s forwards;
+      }
+  
+      @keyframes fadeInTriangle {
+        0% {
+          opacity: 0;
+          transform: translateY(50%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+    @keyframes drawTriangle {
+        0% {
+          stroke-dasharray: 0 1000;
+        }
+        100% {
+          stroke-dasharray: 1000 0;
+        }
+      }
+  
+      @keyframes drawLine {
+        0% {
+          stroke-dasharray: 0 1000;
+        }
+        100% {
+          stroke-dasharray: 1000 0;
+        }
+      }
+  
+      .triangle {
+        stroke: black;
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 0 1000;
+        animation: drawTriangle 2s forwards;
+        animation-delay: 1s; 
+      }
+  
+      .line {
+        stroke: black;
+        stroke-width: 2;
+        fill: none;
+        stroke-dasharray: 0 1000;
+        animation: drawLine 2s forwards;
+        animation-delay: 2.5s; /* Delay to ensure it starts after the triangle is drawn */
+      }
+
     /* Header */
 
     header .menus {
         @apply fixed top-0 z-[52] h-screen w-full max-w-sm gap-9 bg-white transition-all duration-500 ltr:-right-full rtl:-left-full dark:bg-gray-dark lg:static lg:h-auto lg:max-w-none lg:bg-transparent dark:lg:bg-transparent;
     }
     header .menus > ul {
-        @apply relative flex  flex-col divide-y divide-gray/10  font-bold text-black  lg:flex-row lg:items-center lg:gap-11 lg:divide-y-0  lg:p-0 lg:text-white;
+        @apply relative flex  flex-col divide-y divide-gray/10  text-black  lg:flex-row lg:items-center lg:gap-11 lg:divide-y-0  lg:p-0 lg:text-black;
     }
     header .menus > ul li > a {
-        @apply flex items-center justify-between py-4 px-4 transition hover:text-secondary dark:text-white dark:hover:text-secondary lg:px-0 lg:py-10 hover:lg:scale-110;
+        @apply flex items-center justify-between py-4 px-4 transition hover:underline dark:text-white dark:hover:text-secondary lg:px-0 lg:py-5 hover:lg:scale-110;
     }
     header .menus > ul li > a.router-link-exact-active {
-        @apply text-secondary lg:scale-110;
+        @apply underline lg:scale-110;
     }
     header .menus .submenu {
         @apply invisible z-50 mt-5 hidden grid-cols-1 gap-x-4 rounded-lg py-3 text-sm font-medium text-black opacity-0 transition-all dark:text-white lg:absolute lg:top-full lg:grid lg:min-w-max rtl:lg:translate-x-1/4 ltr:lg:-translate-x-1/4 lg:grid-cols-3 lg:bg-[#F0F4F7] lg:shadow-lg lg:dark:bg-gray-dark rtl:xl:-right-1/2 ltr:xl:-left-1/2 xl:grid-cols-4;
@@ -146,11 +222,10 @@ header .menus.open-menus {
 }
 
 /* sticky header */
-
-.sticky-header {
-    @apply bg-black shadow-lg;
+.header-wrap {
+    padding: 0 90px 0;
+    @apply bg-white border-b-[1px] border-black;
 }
-
 /* lightbox */
 
 .fancybox__content > .carousel__button.is-close {

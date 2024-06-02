@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+        class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-barlow text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
     >
         <!-- screen loader -->
         <div v-show="store.isShowMainLoader" class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
@@ -59,7 +59,7 @@
             </svg>
         </div>
 
-        <layout-header :class="{ 'sticky-header': showTopButton }" />
+        <layout-header :class="headerClasses" />
 
         <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
             <NuxtPage />
@@ -88,6 +88,7 @@
 </template>
 <script lang="ts" setup>
     import { ref, onMounted } from 'vue';
+    import { useRoute } from 'vue-router';
     import AOS from 'aos';
     import 'aos/dist/aos.css'; // You can also use <link> for styles
     import appSetting from '@/app-setting';
@@ -96,6 +97,11 @@
     const store = useAppStore();
 
     const showTopButton = ref(false);
+
+    const route = useRoute()
+
+    const isHomePage = computed(() => route.path === '/');
+
     onMounted(() => {
         // set default settings and animation initalization
         AOS.init({
@@ -112,6 +118,13 @@
         };
 
         store.toggleMainLoader(false);
+    });
+
+    const headerClasses = computed(() => {
+      return {
+        'sticky-header': showTopButton.value,
+        'homepage-class': isHomePage.value
+      };
     });
 
     const scrollToTop = () => {
