@@ -36,9 +36,9 @@
                 :loop="true"
                 slidesPerView="auto"
                 :spaceBetween="30"
-                :speed="2500"
+                :speed="3000"
                 :autoplay="{
-                    delay: 3000,
+                    delay: 500,
                     disableOnInteraction: false,
                 }"
                 :modules="[Autoplay]"
@@ -190,7 +190,9 @@
                     data-aos-duration="1000">
             <p class="text-white text-sm uppercase">Contattaci</p>
             <h3 class="text-white text-4xl md:text-6xl leading-tight">
+                <NuxtLink to="/contact-us">
                 Raccontaci la tua <span class="italic">idea</span> <span class="inline-block transform translate-x-2">&rarr;</span>
+                    </NuxtLink>
             </h3>
         </div>
     </div>

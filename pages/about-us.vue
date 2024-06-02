@@ -50,7 +50,7 @@
                 <div class="grid gap-[30px] sm:grid-cols-2 lg:grid-cols-3">
                     <div data-aos="fade-up" data-aos-duration="1000">
                         <div
-                            class="flex items-start gap-[10px] border-2 bg-[#FFDE59] border-black py-6 px-5"
+                            class="flex items-start gap-[10px] min-h-[250px] border-2 bg-[#FFDE59] border-black py-6 px-5"
                         >
                             <span class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full  text-lg text-black">01</span>
                             <div>
@@ -63,7 +63,7 @@
                     </div>
                     <div data-aos="fade-up" data-aos-duration="1000">
                         <div
-                            class="flex items-start gap-[10px] border-2 bg-[#FFDE59] border-black py-6 px-5"
+                            class="flex items-start gap-[10px] min-h-[250px] border-2 bg-[#FFDE59] border-black py-6 px-5"
                         >
                             <span class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full  text-lg text-black">02</span>
                             <div>
@@ -74,7 +74,7 @@
                     </div>
                     <div data-aos="fade-up" data-aos-duration="1000">
                         <div
-                            class="flex items-start gap-[10px] border-2 bg-[#FFDE59] border-black py-6 px-5"
+                            class="flex items-start gap-[10px] min-h-[250px] border-2 bg-[#FFDE59] border-black py-6 px-5"
                         >
                             <span class="flex h-[50px] w-[50px] min-w-[50px] items-center justify-center rounded-full  text-lg text-black">03</span>
                             <div>
@@ -190,9 +190,15 @@ Proattivo e orientato ai risultati, Raul è capace di sviluppare strategie innov
                  <div class="text-center"        data-aos="fade-up"
                     data-aos-duration="1000">
             <p class="text-white text-sm uppercase">Contattaci</p>
-            <h3 class="text-white text-4xl md:text-6xl leading-tight">
+          
+                <h3 class="text-white text-4xl md:text-6xl leading-tight">
+                    <NuxtLink to="/contact-us">
                 Raccontaci la tua <span class="italic">idea</span> <span class="inline-block transform translate-x-2">&rarr;</span>
-            </h3>
+                    </NuxtLink>
+                    </h3>
+
+
+       
         </div>
     </div>
 </section>
